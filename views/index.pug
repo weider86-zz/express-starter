@@ -1,0 +1,10 @@
+html
+  head
+    title= "Users"
+  body
+    h1= "Users"
+    ul
+      each user in users
+        li
+          img(src='/img/avatar.png')
+          a(href='/' + user.username)= user.name.full 
