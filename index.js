@@ -21,6 +21,11 @@ app.get('/users', (req, res) => {
   res.render('index', {users: users});
 });
 
+app.get(/.*big*./, (req, res, next) => {
+  console.log('BIG USER ACCESS');
+  next();
+});
+
 app.get('/:username', (req, res) => {
   let username = req.params.username;
   res.render('user', {username: username});
