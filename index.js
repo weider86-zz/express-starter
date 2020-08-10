@@ -21,6 +21,11 @@ app.get('/users', (req, res) => {
   res.render('index', {users: users});
 });
 
+app.get('/:username', (req, res) => {
+  let username = req.params.username;
+  res.render('user', {username: username});
+});
+
 const server = app.listen(3000, () => {
   console.log(`Sever running at ${server.address().port}`);
 });
