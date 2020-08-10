@@ -16,6 +16,8 @@ fs.readFile('users.json', {encoding: 'utf8'}, (err, data) => {
 app.set('views', './views');
 app.set('view engine', 'pug');
 
+app.use('/img', express.static('images'));
+
 app.get('/', (req, res) => {
   res.send('Express Starter');
 });
